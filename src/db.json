@@ -1,0 +1,9 @@
+{
+    "students": [ 
+        {
+            "id": 1,
+            "name": "Seema Haider",
+            "phone": "3344556677"
+        } 
+    ]
+}
