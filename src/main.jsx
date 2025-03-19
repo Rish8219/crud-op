@@ -6,6 +6,7 @@ import App from './App.jsx'
 import StudentTable from './components/StudentTable.jsx'
 import StudentCreate from './components/StudentCreate.jsx'
 import StudnentEdit from './components/StudnentEdit.jsx'
+import StudentView from './components/StudentView.jsx'
 
 const router = createBrowserRouter([{
   path: '/',
@@ -24,6 +25,11 @@ const router = createBrowserRouter([{
     {
       path: '/student/edit/:id', 
       element: <StudnentEdit />,
+
+    },
+    {
+      path: '/student/view/:id', 
+      element: <StudentView />,
 
     }
   ]
