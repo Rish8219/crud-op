@@ -4,6 +4,7 @@ const StudentCreate = () => {
     return (
         <div>
             <h1>Student Create</h1>
+            HELLO BRO
         </div>
     );
 }
