@@ -24,7 +24,7 @@ const StudentTable = () => {
                     <button className='bg-[#6A9C89] px-6 py-3 rounded-4xl hover:bg-[#C1D8C3] cursor-pointer' onClick={() => { navigate("/student/create/:id") }}>Add Student +</button>
 
                     <table className='mt-6 w-full text-0.5xl text-center '>
-                        <thead className='text-0.5xl bg-[#FFA725]' >
+                        <thead className='w-44 text-0.5xl bg-[#FFA725]' >
                           <tr >
                                 <th >Student ID</th>
                                 <th >Student Name</th>
@@ -33,15 +33,15 @@ const StudentTable = () => {
                             </tr>
                         </thead>
 
-                        <tbody className='mt-6'>
+                        <tbody>
                           { students && students.map((item)=>{
                             console.log(students);
                             return(
                              <tr key={item.id}>
-                             <td>{item.id}</td>
+                             <td className='h-12'>{item.id}</td>
                              <td>{item.name}</td>
                              <td>{item.phone}</td>
-                             <td>  <button className='w-20 bg-red-700 px-2 py-2 rounded-2xl hover:bg-red-900 cursor-pointer' onClick={() => { navToEdit("/student/edit/:id") }}>Edit</button> <button className=' w-20 bg-[#6A9C89] px-2 py-2 rounded-2xl hover:bg-[#C1D8C3] cursor-pointer' onClick={() => { navToView("/student/view/:id") }}>View</button> <button className='w-20 bg-red-700 px-2 py-2 rounded-2xl hover:bg-red-900 cursor-pointer' onClick={() => { navToEdit("/student/edit/:id") }}>Delete</button></td>
+                             <td>  <button className='w-20 bg-blue-500 px-2 py-2 rounded-2xl hover:bg-blue-700 cursor-pointer' onClick={() => { navToEdit("/student/edit/:id") }}>Edit</button> <button className=' w-20 bg-[#6A9C89] px-2 py-2 rounded-2xl hover:bg-[#C1D8C3] cursor-pointer' onClick={() => { navToView("/student/view/:id") }}>View</button> <button className='w-20 bg-red-500 px-2 py-2 rounded-2xl hover:bg-red-600 cursor-pointer' onClick={() => { navToEdit("/student/edit/:id") }}>Delete</button></td>
                          </tr>)
 
                           })} 
