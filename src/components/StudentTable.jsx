@@ -1,4 +1,4 @@
-import React, { useEffect ,useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -7,25 +7,55 @@ const StudentTable = () => {
     const navToView = useNavigate()
     const navigate = useNavigate()
     const [students, setStudents] = useState([])
+    function viewDetails(id) {
+        console.log(id);
+        navToView(`/student/view/${id}`)
+    }
+    function viewEdit(id) {
+        console.log(id);
+        navToEdit(`/student/edit/${id}`)
+    }
+    function removeDetails(id){
+        console.log(id);
+       let ms= window.confirm("are you sure you want to delete the student?")
+        if(ms){
+            fetch("http://localhost:8000/students/"+id,{
+                method:"DELETE"
+            }).then(()=>{alert("Student Deleted Sucessfully")
+                window.location.reload()
+            })
+            .catch((err)=>{
+                console.log(err)
+                alert("Student Data Not Deleted Sucessfully");
+            })
+        }
+    }
+
     useEffect(() => {
-        fetch("http://localhost:8000/students").then((res) => {
-            res.json().then((data) => { setStudents(data);
-                // console.log(setStudents(data));
-                // console.log(students);
-             }).catch((err) => { console.log(err); })
-        })
+        fetch("http://localhost:8000/students")
+            .then((res) => {
+                res.json()
+                    .then((data) => {
+                        setStudents(data);
+                        // console.log(setStudents(data));
+                        // console.log(students);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    })
+            })
     }, [])
     return (
         <>
             <div className='bg-[#e5f5ea]'>
                 <div className="container w-11/12 mx-auto">
-                    <h1 className='text-6xl text-center font-bold text-[#6A9C89] cursor-pointer'>Student Table </h1>
+                    <h1 className='text-6xl text-center font-bold text-[#6A9C89] cursor-pointer'>Student Records </h1>
 
-                    <button className='bg-[#6A9C89] px-6 py-3 rounded-4xl hover:bg-[#C1D8C3] cursor-pointer' onClick={() => { navigate("/student/create/:id") }}>Add Student +</button>
+                    <button className='bg-[#6A9C89] px-6 py-3 rounded-4xl font-bold shadow-2xl hover:bg-[#597c5c] cursor-pointer' onClick={() => { navigate("/student/create/:id") }}>Add Student +</button>
 
                     <table className='mt-6 w-full text-0.5xl text-center '>
                         <thead className='w-44 text-0.5xl bg-[#FFA725]' >
-                          <tr >
+                            <tr className='h-13 text-2xl' >
                                 <th >Student ID</th>
                                 <th >Student Name</th>
                                 <th >Student Phone</th>
@@ -34,17 +64,19 @@ const StudentTable = () => {
                         </thead>
 
                         <tbody>
-                          { students && students.map((item)=>{
-                            console.log(students);
-                            return(
-                             <tr key={item.id}>
-                             <td className='h-12'>{item.id}</td>
-                             <td>{item.name}</td>
-                             <td>{item.phone}</td>
-                             <td>  <button className='w-20 bg-blue-500 px-2 py-2 rounded-2xl hover:bg-blue-700 cursor-pointer' onClick={() => { navToEdit("/student/edit/:id") }}>Edit</button> <button className=' w-20 bg-[#6A9C89] px-2 py-2 rounded-2xl hover:bg-[#C1D8C3] cursor-pointer' onClick={() => { navToView("/student/view/:id") }}>View</button> <button className='w-20 bg-red-500 px-2 py-2 rounded-2xl hover:bg-red-600 cursor-pointer' onClick={() => { navToEdit("/student/edit/:id") }}>Delete</button></td>
-                         </tr>)
+                            {students && students.map((item, index) => {
+                                return (
+                                    <tr style={index % 2 == 0 ? { backgroundColor: "#EFEFEF" } : { backgroundColor: "#C1D8C3" }} key={item.id}>
+                                        <td className='h-12 mt-4'>{item.id}</td>
+                                        <td>{item.name}</td>
+                                        <td>{item.phone}</td>
+                                        <td>  <button className='w-20 font-bold bg-blue-500 px-2 py-2 rounded-2xl hover:bg-blue-600 cursor-pointer' onClick={() => { viewEdit(item.id) }}>Edit</button>
+                                            <button className=' w-20 font-bold ml-1 mr-1 bg-[#6A9C89] px-2 py-2 rounded-2xl hover:bg-[#597c5c] cursor-pointer' onClick={() => {viewDetails(item.id)}}>View</button>
+                                            <button className='w-20 font-bold bg-red-500 px-2 py-2 rounded-2xl hover:bg-red-600 cursor-pointer' onClick={()=>removeDetails(item.id)}>Delete</button>
+                                            </td>
+                                    </tr>)
 
-                          })} 
+                            })}
                         </tbody>
                     </table>
                 </div>
