@@ -20,7 +20,7 @@ const StudnentEdit = () => {
 
       })
       .catch((err) => { console.log(err); })
-  },[])
+  },[studentId])
   function handleSubmit(e) {
     e.preventDefault();
     const studentData = { id, name, phone };
@@ -29,7 +29,7 @@ const StudnentEdit = () => {
       headers: { "content-Type": "application/json" },
       body: JSON.stringify(studentData)
     })
-      .then((res) => {
+      .then(() => {
         alert("Student Data Updated Sucessfully")
         navigate("/")
       })

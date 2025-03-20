@@ -17,7 +17,7 @@ const StudentCreate = () => {
             headers: { "content-Type": "application/json" },
             body: JSON.stringify(studentData)
         })
-            .then((res) => {
+            .then(() => {
              
                 alert("Student Data Saved Sucessfully")
                 navigate("/")

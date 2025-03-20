@@ -9,7 +9,7 @@ const StudentView = () => {
         .then((res)=>res.json())
         .then((data)=>{ setStudent(data)})
         .catch((err)=>{console.log(err);})
-    },[])
+    },[id])
     console.log(id)
     return (
         <div className='bg-[#C1D8C3]'>
