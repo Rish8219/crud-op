@@ -9,7 +9,9 @@ const StudentCreate = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
+
         const studentData = { id, name, phone };
+
         fetch("http://localhost:8000/students", {
             method: "POST",
             headers: { "content-Type": "application/json" },
@@ -24,6 +26,7 @@ const StudentCreate = () => {
                 console.log(err) 
                 alert("Student Data Not Saved Sucessfully")
             })
+
     }
     return (
         <div className='h-screen bg-[#C1D8C3]'>

@@ -51,7 +51,7 @@ const StudentTable = () => {
                 <div className="container w-11/12 mx-auto">
                     <h1 className='text-6xl text-center font-bold text-[#6A9C89] cursor-pointer'>Student Records </h1>
 
-                    <button className='bg-[#6A9C89] px-6 py-3 rounded-4xl font-bold shadow-2xl hover:bg-[#597c5c] cursor-pointer' onClick={() => { navigate("/student/create/:id") }}>Add Student +</button>
+                    <button className='bg-[#6A9C89] px-6 py-3 rounded-4xl font-bold shadow-2xl hover:scale-150 transition all duration-1000 hover:bg-[#597c5c] cursor-pointer' onClick={() => { navigate("/student/create/:id") }}>Add Student +</button>
 
                     <table className='mt-6 w-full text-0.5xl text-center '>
                         <thead className='w-44 text-0.5xl bg-[#FFA725]' >
@@ -72,7 +72,7 @@ const StudentTable = () => {
                                         <td>{item.phone}</td>
                                         <td>  <button className='w-20 font-bold bg-blue-500 px-2 py-2 rounded-2xl hover:bg-blue-600 cursor-pointer' onClick={() => { viewEdit(item.id) }}>Edit</button>
                                             <button className=' w-20 font-bold ml-1 mr-1 bg-[#6A9C89] px-2 py-2 rounded-2xl hover:bg-[#597c5c] cursor-pointer' onClick={() => {viewDetails(item.id)}}>View</button>
-                                            <button className='w-20 font-bold bg-red-500 px-2 py-2 rounded-2xl hover:bg-red-600 cursor-pointer' onClick={()=>removeDetails(item.id)}>Delete</button>
+                                            <button className='w-20 font-bold bg-[#D76C82] px-2 py-2 rounded-2xl hover:bg-[#B03052] cursor-pointer' onClick={()=>removeDetails(item.id)}>Delete</button>
                                             </td>
                                     </tr>)
 

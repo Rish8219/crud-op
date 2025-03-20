@@ -65,7 +65,7 @@ const StudnentEdit = () => {
             </div>
             <div>
               <button className=" w-20 font-bold bg-blue-500 p-3 rounded-2xl hover:bg-blue-600 cursor-pointer mt-3">Update</button>
-              <button className=" w-20 font-bold bg-red-500 p-3 rounded-2xl hover:bg-red-700 cursor-pointer ml-2 mt-3" onClick={(e)=>{handelButton(e)}}>Back</button>
+              <button className=" w-20 font-bold bg-[#D76C82] p-3 rounded-2xl hover:bg-[#B03052] cursor-pointer ml-2 mt-3" onClick={(e)=>{handelButton(e)}}>Back</button>
             </div>
           </form>
         </div>
