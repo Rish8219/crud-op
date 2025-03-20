@@ -47,7 +47,7 @@ const StudentTable = () => {
     }, [])
     return (
         <>
-            <div className='bg-[#e5f5ea]'>
+            <div className='h-screen overflow-hidden bg-[#e5f5ea]'>
                 <div className="container w-11/12 mx-auto">
                     <h1 className='text-6xl text-center font-bold text-[#6A9C89] cursor-pointer'>Student Records </h1>
 

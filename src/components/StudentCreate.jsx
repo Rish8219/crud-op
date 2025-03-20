@@ -29,8 +29,8 @@ const StudentCreate = () => {
 
     }
     return (
-        <div className='h-screen bg-[#C1D8C3]'>
-            <div className='container h-full w-11/12 mx-auto'>
+        <div className='h-screen overflow-y-hidden bg-[#C1D8C3]'>
+            <div className='container w-11/12 mx-auto'>
                 <h1 className='text-6xl text-center font-bold text-[#6A9C89] cursor-pointer'>Create Student </h1>
                 <div className='w-1/2 my-10 mx-auto bg-[#6A9C89] p-5 rounded-2xl'>
                     <form onSubmit={handleSubmit}>
@@ -49,7 +49,7 @@ const StudentCreate = () => {
                         </div>
                         <div>
                             <button className="w-20  font-bold bg-blue-500 p-3 rounded-2xl hover:bg-blue-600 cursor-pointer mt-3">Save</button>
-                            <button className=' ml-2 font-bold w-20 bg-red-500 p-3 rounded-2xl hover:bg-red-700 cursor-pointer' onClick={()=>navigate("/")}>Back</button>
+                            <button className=' ml-2 font-bold w-20 bg-[#D76C82] p-3 rounded-2xl hover:bg-[#B03052] cursor-pointer' onClick={()=>navigate("/")}>Back</button>
                         </div>
                     </form>
                 </div>

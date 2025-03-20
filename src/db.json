@@ -1,11 +1,6 @@
 {
   "students": [
     {
-      "id": "3",
-      "name": "Amit Khanna",
-      "phone": "1122334455"
-    },
-    {
       "id": "4",
       "name": "Priya Verma",
       "phone": "7788990011"
