@@ -13,22 +13,22 @@ const router = createBrowserRouter([{
   element: <App/>,
   children: [
     {
-      path: '/', 
+      path: '/',
       element: <StudentTable />,
 
     },
     {
-      path: '/student/create/:id', 
+      path: '/student/create/:id',
       element: <StudentCreate />,
 
     },
     {
-      path: '/student/edit/:studentId', 
+      path: '/student/edit/:studentId',
       element: <StudnentEdit />,
 
     },
     {
-      path: '/student/view/:id', 
+      path: '/student/view/:id',
       element: <StudentView />,
 
     }
