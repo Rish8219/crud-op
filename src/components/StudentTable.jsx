@@ -47,11 +47,11 @@ const StudentTable = () => {
     }, [])
     return (
         <>
-            <div className='h-screen overflow-hidden bg-[#e5f5ea]'>
+            <div className=' overflow-hidden bg-[#e5f5ea]'>
                 <div className="container w-11/12 mx-auto">
                     <h1 className='text-6xl text-center font-bold text-[#6A9C89] cursor-pointer'>Student Records </h1>
 
-                    <button className='bg-[#6A9C89] px-6 py-3 rounded-4xl font-bold shadow-2xl hover:scale-150 transition all duration-1000 hover:bg-[#597c5c] cursor-pointer' onClick={() => { navigate("/student/create/:id") }}>Add Student +</button>
+                    <button className='bg-[#6A9C89] px-6 py-3 rounded-4xl font-bold shadow-2xl transition all duration-1000 hover:bg-[#597c5c] cursor-pointer' onClick={() => { navigate("/student/create/:id") }}>Add Student +</button>
 
                     <table className='mt-6 w-full text-0.5xl text-center '>
                         <thead className='w-44 text-0.5xl bg-[#FFA725]' >
